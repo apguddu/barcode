@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <parent>
+      <groupId>com.mnptech.bcgen</groupId>
+      <artifactId>barcodeprocessor</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+  <artifactId>productinfoaggregator</artifactId>
+  <packaging>jar</packaging>
+  <name>Product Info Service Aggregator API</name>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-servlet_2.4_spec</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.mnptech.bcgen</groupId>
+      <artifactId>pricesystemreader</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <testFailureIgnore>true</testFailureIgnore>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+	</build>
+</project>
