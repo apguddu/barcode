@@ -1,0 +1,58 @@
+[
+
+{
+"prodcartid" : "0001" ,
+"productdesc" : "Games"
+},
+
+{
+"prodcartid" : "0002" ,
+"productdesc" : "Stationary"
+},
+
+{
+"prodcartid" : "0003" ,
+"productdesc" : "Electronics"
+},
+
+{
+"prodcartid" : "0004" ,
+"productdesc" : "Home Appliances"
+},
+
+{
+"prodcartid" : "0005" ,
+"productdesc" : "Clothing"
+},
+
+{
+"prodcartid" : "0006" ,
+"productdesc" : "Sports"
+},
+
+{
+"prodcartid" : "0007" ,
+"productdesc" : "Mobile Accessories"
+},
+
+{
+"prodcartid" : "0008" ,
+"productdesc" : "Watches"
+},
+
+{
+"prodcartid" : "0009" ,
+"productdesc" : "Footwear"
+},
+
+{
+"prodcartid" : "0010" ,
+"productdesc" : "Stationary"
+},
+
+{
+"prodcartid" : "0011" ,
+"productdesc" : "Kitchen Storage"
+}
+
+]
