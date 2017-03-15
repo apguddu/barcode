@@ -1,5 +1,6 @@
 package com.mnptech.bcgen.util;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,23 +33,21 @@ public class FTPUploaderUtil {
 
            System.out.println("Start uploading first file");
           
-           try(Stream<Path> paths = Files.walk(Paths.get("D:\\All_Barcodes"))) {
-        	    paths.forEach(filePath -> {
-        	    	try {
-        	    	     String firstRemoteFile = "/Souvik/"+filePath.getFileName();
-        	             InputStream inputStream = new FileInputStream(filePath.getFileName().toFile());
-        	    	 
-						 ftpClient.storeFile(firstRemoteFile, inputStream);
-						 inputStream.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-        	    	
-        	    });
-        	} 
+             
+           File folder = new File("D:\\All_Barcodes");
+           File[] listOfFiles = folder.listFiles();
+           String firstRemoteFile = "/Souvik/";
            
-           
+           for (int i = 0; i < listOfFiles.length; i++) {
+        	      if (listOfFiles[i].isFile()) {
+        	    	String fileName = listOfFiles[i].getName();
+        	        System.out.println("File " + listOfFiles[i].getName());
+        	        firstRemoteFile+= fileName;
+        	        File firstLocalFile = new File(folder+"\\"+listOfFiles[i].getName());
+        	        InputStream inputStream = new FileInputStream(firstLocalFile);
+        	        ftpClient.storeFile(firstRemoteFile, inputStream);
+        	      } 
+        	}
           
 
    }catch(Exception e){
